@@ -1,0 +1,3 @@
+@function rgbOpacity($rgb, $opacity) {
+  @return rgba(red($rgb), green($rgb), blue($rgb), $opacity)
+}
