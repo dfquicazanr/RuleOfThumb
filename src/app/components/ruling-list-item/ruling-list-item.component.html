@@ -1,0 +1,37 @@
+<div
+  class="ruling-list-item"
+  [ngStyle]="{
+  backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 15%,  rgb(125,125,125) 25%, rgba(0,0,0,0.4) 100%), url(\'/assets/img/' + ruling.picture + '\')'
+  }">
+
+  <div
+    class="ruling-list-item__result"
+    [ngClass]="{
+    'ruling-list-item__result--positive': ruling.votesOpinion === 'positive',
+    'ruling-list-item__result--negative': ruling.votesOpinion === 'negative'
+    }">
+    <img class="ruling-list-item__result__image" [src]="opinionImage">
+  </div>
+  <div class="ruling-list-item__data">
+    <h3 class="ruling-list-item__data__name">{{ruling.name}}</h3>
+    <p class="ruling-list-item__data__description">{{ruling.description}}</p>
+  </div>
+  <div class="ruling-list-item__voting">
+    <h4 class="ruling-list-item__voting__text">{{ ruling.lastUpdated | timeAgo }} in {{ruling.category | titlecase}}</h4>
+    <button class="ruling-list-item__voting__up-button">
+      <img class="ruling-list-item__voting__up-button__image" src="assets/img/thumbs-up.svg"/>
+    </button>
+    <button class="ruling-list-item__voting__down-button">
+      <img class="ruling-list-item__voting__down-button__image" src="assets/img/thumbs-down.svg"/>
+    </button>
+    <button class="ruling-list-item__voting__vote-button">Vote Now</button>
+  </div>
+  <div class="ruling-list-item__results">
+    <div class="ruling-list-item__results__up" [ngStyle]="{width: ruling.votesPercentages.positive + '%'}">
+      <img class="ruling-list-item__results__up__image" src="assets/img/thumbs-up.svg"/> {{ruling.votesPercentages.positive | number: '1.1-1'}}%
+    </div>
+    <div class="ruling-list-item__results__down" [ngStyle]="{width: ruling.votesPercentages.negative + '%'}">
+      {{ruling.votesPercentages.negative | number: '1.1-1'}}% <img class="ruling-list-item__results__down__image" src="assets/img/thumbs-down.svg"/>
+    </div>
+  </div>
+</div>

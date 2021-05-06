@@ -86,9 +86,9 @@
     </button>
   </aside>
   <main role="main">
-    <!-- Start: Implementation -->
-    👉 Your code goes here 👈
-    <!-- End: Implementation -->
+
+    <app-ruling-list-item class="ruling-list-item" [ruling]="ruling" *ngFor="let ruling of rulingsList"></app-ruling-list-item>
+
   </main>
   <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
     <img
@@ -138,7 +138,3 @@
     </div>
   </footer>
 </div>
-
-
-
-<router-outlet></router-outlet>
