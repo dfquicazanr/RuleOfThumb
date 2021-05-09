@@ -1,5 +1,15 @@
 @import "variables";
 
+@font-face {
+  font-family: "Lato";
+  src: url(/assets/font/Lato-Regular.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "Lato Light";
+  src: url(/assets/font/Lato-Light.ttf) format("opentype");
+}
+
 html, body {
   width: 100%;
   margin: 0;

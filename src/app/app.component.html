@@ -86,7 +86,11 @@
     </button>
   </aside>
   <main role="main">
-
+    <h1 class="main__items-title">Previous Rulings</h1>
+    <select class="main__view-options" name="view-options" id="view-options">
+      <option class="main__view-options__option" value="list">List</option>
+      <option class="main__view-options__option" value="grid">Grid</option>
+    </select>
     <app-ruling-list-item class="ruling-list-item" [ruling]="ruling" *ngFor="let ruling of rulingsList"></app-ruling-list-item>
 
   </main>

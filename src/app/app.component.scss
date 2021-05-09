@@ -707,3 +707,29 @@ main h2 {
     margin: 2rem 0;
   }
 }
+
+.main {
+  &__items-title {
+    display: inline-block;
+    color: $color-dark-gray;
+    font-weight: normal;
+    font-size: xxx-large;
+    font-family: 'Lato Light', sans-serif;
+  }
+
+  &__view-options {
+    display: inline-block;
+    float: right;
+    margin: 35px 0;
+    height: 45px;
+    width: 180px;
+    border: 2px black solid;
+    text-align-last: center;
+
+    &__option {
+      height: 45px;
+      padding: 5px 0;
+      text-align-last: center;
+    }
+  }
+}

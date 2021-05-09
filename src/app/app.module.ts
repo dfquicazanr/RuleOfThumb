@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { RulingListItemComponent } from './components/ruling-list-item/ruling-list-item.component';
 import { TimeAgoExtendsPipe } from './pipes/time-ago-extends/time-ago-extends.pipe';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TimeAgoExtendsPipe } from './pipes/time-ago-extends/time-ago-extends.pi
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
