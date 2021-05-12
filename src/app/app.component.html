@@ -87,11 +87,18 @@
   </aside>
   <main role="main">
     <h1 class="main__items-title">Previous Rulings</h1>
-    <select class="main__view-options" name="view-options" id="view-options">
+    <select class="main__view-options" name="view-options" id="view-options" [(ngModel)]="viewType">
       <option class="main__view-options__option" value="list">List</option>
       <option class="main__view-options__option" value="grid">Grid</option>
     </select>
-    <app-ruling-list-item class="ruling-list-item" [ruling]="ruling" *ngFor="let ruling of rulingsList"></app-ruling-list-item>
+    <div [ngClass]="viewType === 'list'? 'main__list' : 'main__grid'">
+      <ng-container *ngIf="viewType === 'list'; else gridView">
+        <app-ruling-list-item class="ruling-list-item" [ruling]="ruling" *ngFor="let ruling of rulingsList"></app-ruling-list-item>
+      </ng-container>
+      <ng-template #gridView>
+        <app-ruling-grid-item class="ruling-grid-item" [ruling]="ruling" *ngFor="let ruling of rulingsList"></app-ruling-grid-item>
+      </ng-template>
+    </div>
 
   </main>
   <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">

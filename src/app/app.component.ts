@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
 
   rulingsList: Ruling[] = [];
 
+  viewType = 'grid';
+
   constructor(private rulingsServiceService: RulingsServiceService) { }
 
   ngOnInit(): void {

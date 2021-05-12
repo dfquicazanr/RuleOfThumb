@@ -6,19 +6,22 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { RulingListItemComponent } from './components/ruling-list-item/ruling-list-item.component';
 import { TimeAgoExtendsPipe } from './pipes/time-ago-extends/time-ago-extends.pipe';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RulingGridItemComponent } from './components/ruling-grid-item/ruling-grid-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RulingListItemComponent,
-    TimeAgoExtendsPipe
+    TimeAgoExtendsPipe,
+    RulingGridItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
