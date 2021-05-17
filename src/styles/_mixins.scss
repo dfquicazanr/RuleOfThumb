@@ -1,3 +1,17 @@
 @function rgbOpacity($rgb, $opacity) {
   @return rgba(red($rgb), green($rgb), blue($rgb), $opacity)
 }
+
+@mixin phone-media {
+  @media only screen
+  and (max-width: 599px) { @content; }
+}
+@mixin tablet-media {
+  @media only screen
+  and (min-width: 600px)
+  and (max-width: 1199px){ @content; }
+}
+@mixin desktop-media {
+  @media only screen
+  and (min-width: 1200px) { @content; }
+}
